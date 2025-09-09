@@ -1,18 +1,11 @@
-import { BrowserRouter, useRoutes } from "react-router-dom";
-import { routes } from "@/router/PublicRoutes";
-import Layout from "@/layout/Layout";
+import { BrowserRouter } from "react-router-dom";
 import { AuthProvider } from "./hooks/useAuth";
-function PublicRoutes() {
-  return useRoutes(routes);
-}
-
+import AppRoutes from "@/router/Index";
 export default function App() {
   return (
     <AuthProvider>
       <BrowserRouter>
-        <Layout>
-          <PublicRoutes />
-        </Layout>
+        <AppRoutes />
       </BrowserRouter>
     </AuthProvider>
   );

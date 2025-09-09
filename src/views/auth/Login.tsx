@@ -3,6 +3,7 @@ import "@/assets/styles/login.css";
 import { useNavigate } from "react-router-dom";
 import { useAxiosMutation } from "@/hooks/useAxiosMutation";
 import { useAuth } from "@/hooks/useAuth";
+import { adminRouteNames } from "@/router/AdminRoutes";
 export default function Login() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
@@ -21,7 +22,7 @@ export default function Login() {
       const res = await mutate({ email, password });
       if (res?.accessToken) {
         login(res.accessToken);
-        navigate("/dashboard");
+        navigate(adminRouteNames.dashboard);
       }
     } catch (err) {
       console.error("❌ Login failed", err);

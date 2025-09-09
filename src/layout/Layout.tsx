@@ -1,16 +1,15 @@
 // Layout.tsx
-import React from "react";
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
-interface LayoutProps {
-  children: React.ReactNode;
-}
+import { Outlet } from "react-router-dom";
 
-export default function Layout({ children }: LayoutProps) {
+export default function Layout() {
   return (
     <div className="layout">
       <Navbar />
-      <main className="main">{children}</main>
+      <main className="main">
+        <Outlet /> {/* Nested routes will render here */}
+      </main>
       <Footer />
     </div>
   );
