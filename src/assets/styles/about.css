@@ -1,0 +1,177 @@
+.readme-container {
+  max-width: 1000px;
+  margin: 0 auto; /* bottom margin for footer */
+  padding: 2rem;
+  color: #333;
+  font-family: Arial, sans-serif;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.header .title-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+.header h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+.header p {
+  color: #666;
+  margin-top: 0.75rem;
+}
+.badges {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+.badge {
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+.badge.backend {
+  background: #ffe5e5;
+  color: #b30000;
+}
+.badge.frontend {
+  background: #e6f0ff;
+  color: #0047b3;
+}
+.badge.database {
+  background: #e6ffed;
+  color: #006622;
+}
+.badge.auth {
+  background: #f5e6ff;
+  color: #660099;
+}
+
+/* Sections */
+.section {
+  margin-bottom: 3rem;
+}
+.section h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Features */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+.feature-card {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  transition: box-shadow 0.2s;
+}
+.feature-card:hover {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+.feature-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.feature-icon {
+  font-size: 1.5rem;
+  margin-right: 0.75rem;
+}
+.status {
+  font-size: 0.8rem;
+  text-transform: capitalize;
+}
+.status-complete {
+  color: green;
+}
+.status-in-progress {
+  color: orange;
+}
+.status-planned {
+  color: gray;
+}
+
+/* Tech Stack */
+.stack-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+.stack-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+}
+.stack-icon {
+  font-size: 1.25rem;
+  margin-right: 0.5rem;
+}
+.stack-name {
+  font-weight: 600;
+}
+.stack-desc {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* Roadmap */
+.roadmap {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.phase {
+  padding: 1rem;
+  border-left: 4px solid;
+  border-radius: 0.25rem;
+}
+.phase.complete {
+  border-color: green;
+  background: #f0fff0;
+}
+.phase.progress {
+  border-color: orange;
+  background: #fff9e6;
+}
+.phase.planned {
+  border-color: gray;
+  background: #f9f9f9;
+}
+
+/* Footer */
+.footer-about {
+  text-align: center;
+  color: #777;
+  margin-top: 2rem;
+}
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.75rem;
+}
+.footer-links a {
+  color: #0066cc;
+  text-decoration: none;
+}
+.footer-links a:hover {
+  text-decoration: underline;
+}
