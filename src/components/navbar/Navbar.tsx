@@ -1,27 +1,22 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import "@/assets/styles/navbar.css";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
+import ProfileButton from "../ui/ProfileNavBtn";
+import MobileMenu from "@/components/MobileMenu";
+import { useNavigation } from "@/hooks/useNavigation";
+import { useIsMobile } from "@/hooks/use-mobile";
 const Navbar = () => {
-  const { isAuthenticated, logout } = useAuth();
+  const { navItems, authBtns } = useNavigation();
+  const { isAuthenticated, logout, user } = useAuth();
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
+  const isMobile = useIsMobile();
   const navigate = useNavigate();
-  const navItems = [
-    { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
-  ];
-
-  const authBtns = [
-    { name: "Login", path: "/login" },
-    { name: "Register", path: "/register" },
-  ];
 
   const handleLogout = () => {
     logout();
-    navigate("/login");
   };
 
   const navigateTo = (path: string) => {
@@ -56,7 +51,8 @@ const Navbar = () => {
         </div>
 
         <div className="auth">
-          {isAuthenticated && <div className="profile-placeholder"></div>}
+          {isAuthenticated && <ProfileButton />}
+
           {!isAuthenticated &&
             authBtns.map((item) => (
               <button
@@ -78,39 +74,13 @@ const Navbar = () => {
             </button>
           )}
         </div>
-
-        <button className="mobile-menu-btn" onClick={toggleMobileMenu}>
-          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        {isMobile && (
+          <button className="mobile-menu-btn" onClick={toggleMobileMenu}>
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        )}
       </div>
-
-      <div className={`mobile-menu ${isMobileMenuOpen ? "open" : ""}`}>
-        <div className="mobile-nav-items">
-          {navItems.map((item) => (
-            <button
-              key={item.name}
-              onClick={() => navigateTo(item.path)}
-              className="mobile-nav-item"
-            >
-              {item.name}
-            </button>
-          ))}
-        </div>
-        <div className="mobile-auth">
-          {isAuthenticated && (
-            <div className="profile-placeholder mobile"></div>
-          )}
-          {authBtns.map((item) => (
-            <button
-              key={item.name}
-              onClick={() => navigateTo(item.path)}
-              className="mobile-auth-btn"
-            >
-              {item.name}
-            </button>
-          ))}
-        </div>
-      </div>
+      <MobileMenu isOpen={isMobileMenuOpen} onClose={toggleMobileMenu} />
     </>
   );
 };

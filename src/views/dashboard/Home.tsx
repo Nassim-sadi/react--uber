@@ -6,9 +6,9 @@ import data from "@/assets/data.json";
 
 export default function Page() {
   return (
-    <div className="flex flex-1 flex-col">
+    <div className="flex flex-1 flex-col gap-2">
       <SectionCards />
-      <div className="px-4 lg:px-6">
+      <div className="px-4 lg:px-6 ">
         <ChartAreaInteractive />
       </div>
       <DataTable data={data} />

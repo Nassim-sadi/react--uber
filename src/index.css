@@ -37,6 +37,7 @@ body,
   display: flex;
   justify-content: center;
   align-items: center; /* centers content vertically */
+  flex-direction: column;
 }
 
 .layout {
@@ -44,8 +45,6 @@ body,
   flex-direction: column;
   min-height: 100vh; /* full screen height */
 }
-
-
 
 @layer base {
   :root {
@@ -118,8 +117,6 @@ body,
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
-
-
 
 @layer base {
   * {

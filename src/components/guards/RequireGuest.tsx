@@ -6,7 +6,7 @@ import { adminRouteNames } from "@/router/AdminRoutes";
 export default function RequireGuest({ children }: { children: JSX.Element }) {
   const { isAuthenticated } = useAuth();
   if (isAuthenticated) {
-    return <Navigate to={`/admin/${adminRouteNames.dashboard}`} replace />;
+    return <Navigate to={adminRouteNames.dashboard.navUrl} replace />;
   }
   return children;
 }

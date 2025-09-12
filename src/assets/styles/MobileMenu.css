@@ -1,0 +1,248 @@
+/* Mobile Menu Dialog Styles */
+.mobile-menu-dialog {
+  max-width: 100vw;
+  width: 100%;
+  height: 100vh;
+  max-height: 100vh;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  background: white;
+  display: flex;
+  flex-direction: column;
+}
+
+/* On smaller screens, make it full screen */
+@media (max-width: 768px) {
+  .mobile-menu-dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: none;
+  }
+}
+
+/* Mobile Menu Content Container */
+.mobile-menu-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 2rem;
+}
+
+/* Navigation Items Section */
+.mobile-nav-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* Individual Navigation Items */
+.mobile-nav-item {
+  width: 100%;
+  padding: 1rem;
+  background: transparent;
+  border: none;
+  text-align: left;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #374151;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.mobile-nav-item:hover {
+  background-color: #f3f4f6;
+  color: #1f2937;
+  transform: translateX(4px);
+}
+
+.mobile-nav-item:active {
+  background-color: #e5e7eb;
+  transform: translateX(2px);
+}
+
+/* Auth Section */
+.mobile-auth {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: auto;
+  padding-top: 1.5rem;
+}
+
+/* Profile Placeholder */
+.profile-placeholder.mobile {
+  padding: 1rem;
+  /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.profile-placeholder.mobile span {
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* Auth Buttons */
+.mobile-auth-btn {
+  width: 100%;
+  padding: 0.875rem 1.5rem;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+/* Login Button Styles */
+.mobile-auth-btn:first-of-type {
+  background: transparent;
+  color: #4f46e5;
+  border-color: #4f46e5;
+}
+
+.mobile-auth-btn:first-of-type:hover {
+  background: #4f46e5;
+  color: white;
+}
+
+/* Sign Up / Logout Button Styles */
+.mobile-auth-btn:last-of-type {
+  background: #4f46e5;
+  color: white;
+  border-color: #4f46e5;
+}
+
+.mobile-auth-btn:last-of-type:hover {
+  background: #3730a3;
+  border-color: #3730a3;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}
+
+/* Logout specific styling */
+.mobile-auth-btn[data-action="logout"] {
+  background: #ef4444;
+  border-color: #ef4444;
+}
+
+.mobile-auth-btn[data-action="logout"]:hover {
+  background: #dc2626;
+  border-color: #dc2626;
+}
+
+/* Hamburger Menu Trigger Button (for reference) */
+.hamburger-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  color: #374151;
+  transition: color 0.2s ease;
+}
+
+.hamburger-btn:hover {
+  color: #4f46e5;
+}
+
+/* Show hamburger on mobile */
+@media (max-width: 768px) {
+  .hamburger-btn {
+    display: block;
+  }
+}
+
+/* Dialog Header Customization */
+.mobile-menu-dialog .dialog-header {
+  padding: 1.5rem 1rem 0;
+  border-bottom: 1px solid #e2e8f0;
+  margin-bottom: 0;
+}
+
+.mobile-menu-dialog .dialog-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.mobile-menu-dialog .dialog-description {
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+/* Animation for menu items */
+.mobile-nav-item,
+.mobile-auth-btn {
+  opacity: 0;
+  animation: slideInUp 0.3s ease forwards;
+}
+
+.mobile-nav-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.mobile-nav-item:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.mobile-nav-item:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.mobile-nav-item:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.mobile-auth-btn:nth-child(1) {
+  animation-delay: 0.5s;
+}
+.mobile-auth-btn:nth-child(2) {
+  animation-delay: 0.6s;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .mobile-menu-dialog {
+    background: #1f2937;
+    color: #f9fafb;
+  }
+
+  .mobile-nav-item {
+    color: #f9fafb;
+  }
+
+  .mobile-nav-item:hover {
+    background-color: #374151;
+    color: #f9fafb;
+  }
+
+  .dialog-header {
+    border-bottom-color: #374151;
+  }
+
+  .mobile-nav-items {
+    border-bottom-color: #374151;
+  }
+}

@@ -51,6 +51,13 @@
   background: rgba(255, 255, 255, 0.2);
 }
 
+.mobile-menu-btn {
+  color: white;
+  transition: ease 0.2s;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
 .auth {
   display: flex;
   align-items: center;
@@ -74,119 +81,23 @@
   color: #667eea;
 }
 
-.profile-placeholder {
-  width: 32px;
-  height: 32px;
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 50%;
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  cursor: pointer;
-  transition: all 0.2s;
+.profile-btn {
+  @apply w-10 h-10 rounded-full bg-blue-600 text-white font-bold flex items-center justify-center hover:bg-blue-700 transition;
 }
 
-.profile-placeholder:hover {
-  background: rgba(255, 255, 255, 0.5);
-  transform: scale(1.05);
+.profile-btn:hover {
+  @apply bg-blue-700 scale-105;
 }
 
-.profile-placeholder.mobile {
+.profile-btn.mobile {
   width: 40px;
   height: 40px;
   margin-bottom: 0.5rem;
-}
-
-.mobile-menu-btn {
-  display: none;
-  color: white;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0.5rem;
-  border-radius: 0.5rem;
-  transition: background 0.2s;
-}
-
-.mobile-menu-btn:hover {
-  background: rgba(255, 255, 255, 0.2);
-}
-
-.mobile-menu {
-  position: absolute;
-  top: 4rem;
-  left: 0;
-  right: 0;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 1rem;
-  z-index: 99;
-  transform: translateY(-10px);
-  opacity: 0;
-  transition: all 0.3s ease-out;
-  pointer-events: none;
-}
-
-.mobile-menu.open {
-  transform: translateY(0);
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.mobile-nav-items {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-.mobile-nav-item {
-  color: white;
-  background: transparent;
-  border: none;
-  font-size: 1rem;
-  font-weight: 500;
-  padding: 0.75rem 1rem;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  transition: background 0.2s;
-  text-align: left;
-}
-
-.mobile-nav-item:hover {
-  background: rgba(255, 255, 255, 0.2);
-}
-
-.mobile-auth {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding-top: 1rem;
-}
-
-.mobile-auth-btn {
-  color: white;
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  padding: 0.75rem 1rem;
-  border-radius: 0.5rem;
-  font-size: 1rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.mobile-auth-btn:hover {
-  background: white;
-  color: #667eea;
 }
 
 @media (max-width: 768px) {
   .nav-items,
   .auth {
     display: none;
-  }
-
-  .mobile-menu-btn {
-    display: block;
   }
 }

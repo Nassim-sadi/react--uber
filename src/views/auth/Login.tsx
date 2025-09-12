@@ -20,9 +20,9 @@ export default function Login() {
     e.preventDefault();
     try {
       const res = await mutate({ email, password });
-      if (res?.accessToken) {
-        login(res.accessToken);
-        navigate(adminRouteNames.dashboard);
+      if (res?.accessToken && res?.user) {
+        login(res.accessToken, res.user);
+        navigate(adminRouteNames.dashboard.url);
       }
     } catch (err) {
       console.error("❌ Login failed", err);
